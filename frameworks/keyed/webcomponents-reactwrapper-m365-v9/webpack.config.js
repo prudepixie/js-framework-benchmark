@@ -6,7 +6,7 @@ module.exports = {
 	mode: 'production',
 	// mode: 'development',
 	entry: {
-		main: path.join(__dirname, 'src', 'main.jsx'),
+		main: path.join(__dirname, 'src', 'main.tsx'),
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -22,19 +22,19 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
-							plugins: [['@babel/plugin-proposal-decorators', { "legacy": true }]]
-						}
-					}
-				]
-			},
+			// {
+			// 	test: /\.jsx?$/,
+			// 	exclude: /node_modules/,
+			// 	use: [
+			// 		{
+			// 			loader: 'babel-loader',
+			// 			options: {
+			// 				presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+			// 				plugins: [['@babel/plugin-proposal-decorators', { "legacy": true }]]
+			// 			}
+			// 		}
+			// 	]
+			// },
 			{
 				test: /\.tsx?/,
 				use: [{

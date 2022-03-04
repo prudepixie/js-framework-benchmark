@@ -35,12 +35,12 @@ export const benchmarkTemplate = html<Benchmark>`
         <tbody>
           ${repeat(x => x.data, html<RandomItem, Benchmark>`
             <tr class="${(x, c) => x === c.parent.selected ? 'danger' : ''}">
-                <td class="col-md-1">${oneTime(x => x.id)}</td>
+                <td class="col-md-1">${oneTime(x => x.id)}
+                    <fluent-button>${x => x.label}</fluent-button>
+                    <fluent-link href="#">${x => x.label}</fluent-link>
+                </td>
                 <td class="col-md-4">
                     <a @click="${(x, c) => c.parent.select(x)}">${x => x.label}</a>
-                    <fluent-button>
-                        <fluent-link href="#">${x => x.label}</fluent-link>
-                    </fluent-button>
                 </td>
                 <td class="col-md-1">
                   <a @click="${(x, c) => c.parent.remove(x)}">

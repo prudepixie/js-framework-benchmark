@@ -58,9 +58,8 @@ class Row extends Component {
           <td className="col-md-1">{item.id}</td>
           <td className="col-md-4">
             <a onClick={this.onSelect}>{item.label}</a>
-            <ReactButton>
-              <Link>{item.label}</Link>
-            </ReactButton>
+            <ReactButton>{item.label}</ReactButton>
+            <Link>{item.label}</Link>
           </td>
           <td className="col-md-1">
             <a onClick={this.onRemove}>

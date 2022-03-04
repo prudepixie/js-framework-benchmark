@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+/** @jsx h */ /* Note: Set the JSX pragma to the wrapped version of createElement */
+import h from "./pragma";
+import { Component } from 'react';
 import { render } from 'react-dom';
-import { fluentButton, fluentLink, provideFluentDesignSystem } from "../fluent-wc-v9";
-import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
-import {FluentProvider,teamsLightTheme, } from '@fluentui/react-components';
+import { FluentButton, FluentLink } from "../fluent-wc-v9";
+import {FluentProvider,webLightTheme } from '@fluentui/react-components';
 const random = (max) => Math.round(Math.random() * 1000) % max;
 
 const A = ["pretty", "large", "big", "small", "tall", "short", "long", "handsome", "plain", "quaint", "clean",
@@ -29,14 +30,16 @@ const buildData = (count) => {
 
 const initialState = { data: [], selected: 0 };
 
-const { wrap } = provideReactWrapper(
-  React, 
-  provideFluentDesignSystem()
-);
-const FluentButton = wrap(fluentButton());
-const FluentLink = wrap(fluentLink());
+interface RowProps {
+  item: {id: string, label: string};
+  selected: any;
+  dispatch: any;
+}
 
-class Row extends Component {
+class Row extends Component<RowProps> {
+  onSelect: () => void;
+  onRemove: () => void;
+
   shouldComponentUpdate(nextProps) {
     const { item, selected } = this.props;
 
@@ -64,12 +67,13 @@ class Row extends Component {
 
     return (
         <tr className={selected ? "danger" : ""}>
-          <td className="col-md-1">{item.id}</td>
+          <td className="col-md-1">
+            {item.id}
+            <FluentButton>{item.label}</FluentButton>
+            <FluentLink href="#">{item.label}</FluentLink>
+          </td>
           <td className="col-md-4">
             <a onClick={this.onSelect}>{item.label}</a>
-            <FluentButton>
-              <FluentLink>{item.label}</FluentLink>
-            </FluentButton>
           </td>
           <td className="col-md-1">
             <a onClick={this.onRemove}>
@@ -82,7 +86,13 @@ class Row extends Component {
   }
 }
 
-class Button extends Component {
+interface ButtonProps {
+  id: string;
+  cb: any;
+  title: string
+}
+
+class Button extends Component<ButtonProps> {
   render() {
     const { id, cb, title } = this.props;
 
@@ -94,7 +104,11 @@ class Button extends Component {
   }
 }
 
-class Jumbotron extends Component {
+interface JumbotronProps {
+  dispatch: any;
+}
+
+class Jumbotron extends Component<JumbotronProps> {
   shouldComponentUpdate() {
     return false;
   }
@@ -124,7 +138,14 @@ class Jumbotron extends Component {
   }
 }
 
-class Main extends Component {
+type Props = {}
+type State = {
+  data: any,
+  selected: number
+}
+class Main extends Component<Props, State>{
+  dispatch: (action: any) => void;
+
   constructor(props) {
     super(props);
 
@@ -191,6 +212,6 @@ class Main extends Component {
 }
 
 render(
-  <FluentProvider theme={teamsLightTheme}><Main /></FluentProvider>,
+  <FluentProvider theme={webLightTheme}><Main /></FluentProvider>,
   document.getElementById('main'),
 );

@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "target": "es6",
       "declaration": true,
       "esModuleInterop": true,
       "experimentalDecorators": true,
@@ -8,13 +9,15 @@
       "declarationDir": "dist/dts",
       "outDir": "dist/esm",
       "strictNullChecks": true,
-      "target": "es2015",
       "module": "ESNext",
+      "isolatedModules": true,
       "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
       "importHelpers": true,
-      "types": ["node"],
-      "lib": ["DOM", "ES2015", "ES2016.Array.Include"]
+      "lib": ["dom","dom.iterable","esnext"],
+      "jsx": "react"
     },
-    "include": ["src"]
+    "include": ["src", "src/types.d.ts"]
   }
   
