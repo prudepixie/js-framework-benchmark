@@ -15,11 +15,6 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
-	devServer: {
-		static: path.join(__dirname, "build"),
-		compress: true,
-		port: 4000,
-	},
 	module: {
 		rules: [{
 			test: /\.jsx?$/,
@@ -68,8 +63,9 @@ module.exports = {
 				},
 				// Use multi-process parallel running to improve the build speed
 				// Default number of concurrent runs: os.cpus().length - 1
-				parallel: true
+				parallel: true,
 				// Enable file caching
+				cache: true,
 			}),
 		]
 	},

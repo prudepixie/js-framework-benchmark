@@ -1,10 +1,10 @@
 {
   "name": "js-framework-benchmark-react",
   "version": "1.2.0",
-  "description": "React demo",
+  "description": "Web Components- React Wrapper - M365 V9 demo",
   "main": "index.js",
   "js-framework-benchmark": {
-    "frameworkVersionFromPackage": "react"
+    "frameworkVersionFromPackage": "@microsoft/fast-element"
   },
   "scripts": {
     "build-dev": "webpack serve",
@@ -23,15 +23,19 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-decorators": "^7.17.2",
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.12.1",
     "babel-loader": "8.1.0",
     "terser-webpack-plugin": "5.3.1",
+    "ts-loader": "^9.2.7",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@fluentui/react-components": "^9.0.0-rc.3",
+    "@microsoft/fast-react-wrapper": "^0.1.32",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }

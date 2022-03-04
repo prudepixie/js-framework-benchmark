@@ -13,7 +13,7 @@ module.exports = {
 		filename: '[name].js'
 	},
 	resolve: {
-		extensions: ['.js', '.jsx']
+		extensions: ['.js', '.jsx', ".tsx", '.ts']
 	},
 	devServer: {
 		static: path.join(__dirname, "build"),
@@ -21,18 +21,31 @@ module.exports = {
 		port: 4000,
 	},
 	module: {
-		rules: [{
-			test: /\.jsx?$/,
-			exclude: /node_modules/,
-			use: [
-				{
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]]
+		rules: [
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+							plugins: [['@babel/plugin-proposal-decorators', { "legacy": true }]]
+						}
 					}
-				}
-			]
-		}]
+				]
+			},
+			{
+				test: /\.tsx?/,
+				use: [{
+					loader: 'ts-loader',
+					options: {
+						configFile: "tsconfig.json"
+					}
+				}],
+				exclude: /node_modules/,
+			}
+		]
 	},
 	optimization: {
 		minimizer: [
@@ -69,7 +82,6 @@ module.exports = {
 				// Use multi-process parallel running to improve the build speed
 				// Default number of concurrent runs: os.cpus().length - 1
 				parallel: true
-				// Enable file caching
 			}),
 		]
 	},

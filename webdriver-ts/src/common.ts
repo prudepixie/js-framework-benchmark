@@ -43,7 +43,7 @@ export interface BenchmarkOptions extends BenchmarkDriverOptions {
 export let config = {
   PORT: 8080,
   REMOTE_DEBUGGING_PORT: 9999,
-  CHROME_PORT: 9998,
+  CHROME_PORT: 9515,
   NUM_ITERATIONS_FOR_BENCHMARK_CPU: 10,
   NUM_ITERATIONS_FOR_BENCHMARK_CPU_DROP_SLOWEST_COUNT: 2, // drop the # of slowest results
   NUM_ITERATIONS_FOR_BENCHMARK_MEM: 1,
