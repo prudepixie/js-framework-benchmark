@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@microsoft/fast-element": "1.7.2",
-    "fluent-wc-v9": "file:../fluent-v9-example-wc"
+    "minify-html-literals": "^1.3.5"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
