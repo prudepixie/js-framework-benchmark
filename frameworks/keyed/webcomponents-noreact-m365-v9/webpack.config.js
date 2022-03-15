@@ -1,42 +1,32 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = function(env, { mode }) {
-  const production = mode === 'production';
+module.exports = function (env, { mode }) {
+  const production = mode === "production";
   return {
-    mode: production ? 'production' : 'development',
-    devtool: production ? 'source-map' : 'inline-source-map',
+    mode: production ? "production" : "development",
     entry: {
-      app: ['./src/main.ts']
+      app: ["./src/main.ts"],
     },
     output: {
-      filename: 'bundle.js'
+      filename: "bundle.js",
     },
     resolve: {
-      extensions: ['.ts', '.js'],
-      modules: ['src', 'node_modules']
+      extensions: [".ts", ".js"],
+      modules: ["src", "node_modules"],
     },
-    devServer: {
-      port: 9000,
-      historyApiFallback: true,
-      writeToDisk: true,
-      open: !process.env.CI,
-      lazy: false
-    },
-    plugins: [
-      new CleanWebpackPlugin()
-    ],
+    plugins: [new CleanWebpackPlugin()],
     module: {
       rules: [
         {
           test: /\.ts$/i,
           use: [
             {
-              loader: 'ts-loader'
-            }
+              loader: "ts-loader",
+            },
           ],
-          exclude: /node_modules/
-        }
-      ]
-    }
-  }
-}
+          exclude: /node_modules/,
+        },
+      ],
+    },
+  };
+};
