@@ -4,7 +4,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  // mode: 'development',
   entry: {
     main: path.join(__dirname, "src", "main.tsx"),
   },
@@ -22,27 +21,12 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.jsx?$/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: "babel-loader",
-      //       options: {
-      //         presets: [
-      //           "@babel/preset-env",
-      //           ["@babel/preset-react", { runtime: "automatic" }],
-      //         ],
-      //         plugins: [
-      //           ["@babel/plugin-proposal-decorators", { legacy: true }],
-      //         ],
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.tsx?/,
         use: [
+          {
+            loader: path.resolve(__dirname, "./template-loader.js"),
+          },
           {
             loader: "ts-loader",
             options: {
