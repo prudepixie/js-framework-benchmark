@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require("path");
 
 module.exports = function (env, { mode }) {
   const production = mode === "production";
@@ -20,6 +21,9 @@ module.exports = function (env, { mode }) {
         {
           test: /\.ts$/i,
           use: [
+            {
+              loader: path.resolve(__dirname, "./template-loader.js"),
+            },
             {
               loader: "ts-loader",
             },
