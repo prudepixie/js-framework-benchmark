@@ -1,23 +1,22 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "declaration": true,
-      "esModuleInterop": true,
-      "experimentalDecorators": true,
-      "resolveJsonModule": true,
-      "moduleResolution": "node",
-      "declarationDir": "dist/dts",
-      "outDir": "dist/esm",
-      "strictNullChecks": true,
-      "module": "ESNext",
-      "isolatedModules": true,
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "skipLibCheck": true,
-      "importHelpers": true,
-      "lib": ["dom","dom.iterable","esnext"],
-      "jsx": "react"
-    },
-    "include": ["src", "src/types.d.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "es6",
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "declarationDir": "dist/dts",
+    "outDir": "dist/esm",
+    "strictNullChecks": true,
+    "module": "ESNext",
+    "isolatedModules": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react"
+  },
+  "include": ["src", "src/types.d.ts"]
+}

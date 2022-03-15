@@ -7,7 +7,7 @@ import { appearanceBehavior } from "../utilities/appearance-behavior";
  * Styles for Link
  * @public
  */
-export const linkStyles = (context: any, definition: any) => css`
+export const linkStyles = css`
     ${display("inline")}
     
     :host .base {

@@ -81,23 +81,23 @@ import { Button } from "../button/button";
     /**
      * @internal
      */
-         public keypressHandler = (e: KeyboardEvent): void => {
-            if (!this.disabled && !this.disabledFocusable) {
-                switch (e.key) {
-                    case "Enter":
-                    case " ":
-                        this.checked = !this.checked;
-                        break;
-                }
+        public keypressHandler = (e: KeyboardEvent): void => {
+        if (!this.disabled && !this.disabledFocusable) {
+            switch (e.key) {
+                case "Enter":
+                case " ":
+                    this.checked = !this.checked;
+                    break;
             }
-        };
-    
-        /**
-         * @internal
-         */
-        public clickHandler = (e: MouseEvent): void => {
-            if (!this.disabled && !this.disabledFocusable) {
-                this.checked = !this.checked;
-            }
-        };
+        }
+    };
+
+    /**
+     * @internal
+     */
+    public clickHandler = (e: MouseEvent): void => {
+        if (!this.disabled && !this.disabledFocusable) {
+            this.checked = !this.checked;
+        }
+    };
 }

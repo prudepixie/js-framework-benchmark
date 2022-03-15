@@ -1,12 +1,11 @@
 import { html, ref, slotted } from "@microsoft/fast-element";
-import { endSlotTemplate, startSlotTemplate } from "@microsoft/fast-foundation";
 import type { ToggleButton } from "./toggle-button";
 
 /**
  * The template for the {@link @microsoft/fast-foundation#(Button:class)} component.
  * @public
  */
-export const buttonTemplate = (context: any, definition: any) => html<ToggleButton>`
+export const buttonTemplate = html<ToggleButton>`
     <button
         class="base"
         part="base"
@@ -47,8 +46,8 @@ export const buttonTemplate = (context: any, definition: any) => html<ToggleButt
         @click="${(x, c) => x.clickHandler(c.event as MouseEvent)}"
         ${ref("control")}
     >
-        ${startSlotTemplate(context, definition)}
+        <slot name="start"></slot>
         <slot ${slotted("defaultSlottedContent")}></slot>
-        ${endSlotTemplate(context, definition)}
+        <slot name="end"></slot>
     </button>
 `;

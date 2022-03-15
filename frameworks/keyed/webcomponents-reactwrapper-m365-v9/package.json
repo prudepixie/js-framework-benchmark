@@ -29,7 +29,7 @@
     "babel-loader": "8.1.0",
     "terser-webpack-plugin": "5.3.1",
     "ts-loader": "^9.2.7",
-    "webpack": "^5.68.0",
+    "webpack": "^4.43.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
@@ -37,9 +37,10 @@
     "@fluentui/react-components": "^9.0.0-rc.3",
     "@fluentui/react-theme": "^9.0.0-rc.4",
     "@microsoft/fast-element": "^1.7.2",
-    "@microsoft/fast-foundation": "^2.34.0",
+    "@microsoft/fast-foundation": "^2.36.0",
     "@skatejs/val": "^0.5.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "typescript": "^3.9.0"
   }
 }

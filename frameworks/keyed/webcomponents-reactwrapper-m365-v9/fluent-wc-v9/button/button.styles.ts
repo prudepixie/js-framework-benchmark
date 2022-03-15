@@ -16,28 +16,28 @@ import {
  * Styles for Button
  * @public
  */
-export const buttonStyles = (context: any, definition: any) => css`
-    ${baseButtonStyles(context, definition)}
+export const buttonStyles = css`
+    ${baseButtonStyles}
 `.withBehaviors(
     appearanceBehavior("primary", css`
-        ${primaryButtonStyles(context, definition)}
+        ${primaryButtonStyles}
     `),
     appearanceBehavior("subtle", css`
-        ${subtleButtonStyles(context, definition)}
+        ${subtleButtonStyles}
     `),
     appearanceBehavior("outline", css`
-        ${outlineButtonStyles(context, definition)}
+        ${outlineButtonStyles}
     `),
     appearanceBehavior("transparent", css`
-        ${transparentButtonStyles(context, definition)}
+        ${transparentButtonStyles}
     `),
     sizeBehavior("small", css`
-        ${smallButtonStyles(context, definition)}
+        ${smallButtonStyles}
     `),
     sizeBehavior("medium", css`
-        ${mediumButtonStyles(context, definition)}
+        ${mediumButtonStyles}
     `),
     sizeBehavior("large", css`
-        ${largeButtonStyles(context, definition)}
+        ${largeButtonStyles}
     `)
 );

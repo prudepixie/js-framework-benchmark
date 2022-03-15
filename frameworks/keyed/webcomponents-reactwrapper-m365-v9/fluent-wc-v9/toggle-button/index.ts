@@ -1,3 +1,4 @@
+import { customElement } from '@microsoft/fast-element';
 import { buttonTemplate as template } from "./toggle-button.template";
 import { ToggleButton } from "./toggle-button";
 import { toggleButtonStyles as styles } from "./toggle-button.styles";
@@ -13,11 +14,12 @@ import { toggleButtonStyles as styles } from "./toggle-button.styles";
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
- export const fluentToggleButton = ToggleButton.compose({
-    baseName: "toggle-button",
+@customElement({
+    name: "fluent-toggle-button",
     template,
     styles,
     shadowOptions: {
         delegatesFocus: true,
     },
-});
+})
+export class FluentToggleButton extends ToggleButton {}

@@ -17,8 +17,8 @@ import {
  * Styles for Button
  * @public
  */
-export const toggleButtonStyles = (context: any, definition: any) => css`
-    ${baseButtonStyles(context, definition)}
+export const toggleButtonStyles = css`
+    ${baseButtonStyles}
 
     :host([current-checked]) .base {
         background-color: ${tokens.colorNeutralBackground1Selected};
@@ -40,7 +40,7 @@ export const toggleButtonStyles = (context: any, definition: any) => css`
     }
 `.withBehaviors(
     appearanceBehavior("primary", css`
-        ${primaryButtonStyles(context, definition)}
+        ${primaryButtonStyles}
 
         :host([current-checked][appearance="primary"]) .base {
             background-color: ${tokens.colorBrandBackgroundSelected};
@@ -57,7 +57,7 @@ export const toggleButtonStyles = (context: any, definition: any) => css`
         }
     `),
     appearanceBehavior("subtle", css`
-        ${subtleButtonStyles(context, definition)}
+        ${subtleButtonStyles}
 
         :host([current-checked][appearance="subtle"]) .base {
             background-color: ${tokens.colorSubtleBackgroundSelected};
@@ -76,7 +76,7 @@ export const toggleButtonStyles = (context: any, definition: any) => css`
         }
     `),
     appearanceBehavior("outline", css`
-        ${outlineButtonStyles(context, definition)}
+        ${outlineButtonStyles}
 
         :host([current-checked][appearance="outline"]) .base {
             background-color: ${tokens.colorTransparentBackgroundSelected};
@@ -91,7 +91,7 @@ export const toggleButtonStyles = (context: any, definition: any) => css`
         }
     `),
     appearanceBehavior("transparent", css`
-        ${transparentButtonStyles(context, definition)}
+        ${transparentButtonStyles}
 
         :host([current-checked][appearance="transparent"]) .base {
             background-color: ${tokens.colorTransparentBackgroundSelected};
@@ -110,12 +110,12 @@ export const toggleButtonStyles = (context: any, definition: any) => css`
         }
     `),
     sizeBehavior("small", css`
-        ${smallButtonStyles(context, definition)}
+        ${smallButtonStyles}
     `),
     sizeBehavior("medium", css`
-        ${mediumButtonStyles(context, definition)}
+        ${mediumButtonStyles}
     `),
     sizeBehavior("large", css`
-        ${largeButtonStyles(context, definition)}
+        ${largeButtonStyles}
     `)
 );

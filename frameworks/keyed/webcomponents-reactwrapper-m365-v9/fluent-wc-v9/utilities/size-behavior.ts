@@ -10,6 +10,6 @@ import { PropertyStyleSheetBehavior } from "@microsoft/fast-foundation";
  *
  * @public
  */
- export function sizeBehavior(value: string, styles: ElementStyles) {
+ export function sizeBehavior(value: string | number, styles: ElementStyles) {
     return new PropertyStyleSheetBehavior("size", value, styles);
 }
